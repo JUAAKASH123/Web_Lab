@@ -8,8 +8,8 @@ $name=$_POST['Name'];
 $address=$_POST['address'];
 $phone_number=$_POST['number'];
 $user_name=$_POST['uname'];
-$Password=$_POST['password'];
-$sql="insert into userregistration(name,password,phone_number,user_name,address)VALUES('$name','$password','$phone_number','$user_name','$address')";
+$password=$_POST['password'];
+$sql="insert into userregistration(name,password,phone_number,user_name,address)VALUES('$name','$address','$phone_number','$user_name','$password')";
 $result=mysqli_query($conn,$sql);
 if($result){
 echo"New records successfully created";
@@ -31,7 +31,7 @@ mysqli_close($conn);
 </tr>
 <tr>
 <th>Phone Number</th>
-<th><input type="number" name="number"></th>
+<th><input type="text" name="number"></th>
 </tr>
 <tr>
 <th>User Name</th>
