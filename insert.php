@@ -19,6 +19,7 @@ mysqli_close($conn);
 ?>
 
 <form method="POST" action="">
+<h2 align="center">New User Registration</h2>
 <table align="center" cellspacing="5" cellpadding="5">
 <tr>
 <th>Enter the Name</th>
