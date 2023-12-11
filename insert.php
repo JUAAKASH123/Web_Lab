@@ -4,19 +4,18 @@
 require('main.php');
 if(isset($_POST['sub']))
 {
-$name=$_POST['fname']; 
+$name=$_POST['Name'];
 $address=$_POST['address'];
 $phone_number=$_POST['number'];
 $user_name=$_POST['uname'];
-$password=$_POST['pwd'];
-
-$sql="insert into user_registration(name,address,phone_number,user_name,password)VALUES('$name','$address','$phone_number','$user_name','$password')";
+$password=$_POST['password'];
+$sql="insert into userregistration(name,password,phone_number,user_name,address)VALUES('$name','$address','$phone_number','$user_name','$password')";
 $result=mysqli_query($conn,$sql);
 if($result){
-echo "New records successfully created.";
+echo"New records successfully created";
 }
 mysqli_close($conn);
-} else {                 
+} else {
 ?>
 
 <form method="POST" action="">
@@ -24,7 +23,7 @@ mysqli_close($conn);
 <table align="center" cellspacing="5" cellpadding="5">
 <tr>
 <th>Enter the Name</th>
-<th><input type="text" name="fname"></th>
+<th><input type="text" name="Name"></th>
 </tr>
 <tr>
 <th>Address</th>
@@ -40,7 +39,7 @@ mysqli_close($conn);
 </tr>
 <tr>
 <th>Password</th>
-<th><input type="password" name="pwd"></th>
+<th><input type="password" name="password"></th>
 </tr>
 <tr>
 <td align="center">
